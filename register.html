@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
+ 
+<title>register</title>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<style>
+b{
+	position: relative;
+	min-height: 1px;
+	padding-right: 70px;
+	padding-left: 15px;
+}
+
+	
+
+
+b.demo1{
+	position: relative;
+	min-height: 1px;
+	padding-right: 45px;
+	padding-left: 15px;
+
+}
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+  <body class="bg-success">
+  
+     <nav class="navbar navbar-inverse navbar-top">
+        <div class="container-fluid">
+        <div class="navbar-header">
+               <a class="navbar-brand" href="http://localhost/example/new%20folder/form2.html#"><span class=
+               "glyphicon glyphicon-home"></span>Home</a>
+               <a class="navbar-brand" href="http://localhost/example/new%20folder/register.html">Register</a>
+        </div>
+              <ul class="nav navbar-nav">
+              <li><a href="http://localhost/example/new%20folder/help.html#"><span class="glyphicon glyphicon-help">
+              </span>Help</a></li>
+              <li><a href="http://localhost/example/new%20folder/support.html">Contact Us</a></li>
+              </ul>
+              
+              
+        </div>
+    </nav>
+
+
+
+        <div class="page">
+
+        <section  class="card register" ng-app="myApp" ng-controller="RegistrationController">
+
+     <form name="myForm"  novalidate>
+         <div class="col-sm-6">
+
+
+ 
+         <div class="pull-left">
+           <h1>Student Registration Form</h1><br>
+            
+         <fieldset>
+
+            <b>Name</b>
+         <input type="text" name="firstname" placeholder="first name" ng-model="firstname" ng-required="true"> <input type="text"  name="lastname" placeholder="last name" ng-model="lastname" ng-required="true">
+
+         <p class="error validationerror" ng-show="myForm.firstname.$invalid && myForm.firstname.$touched">
+         <span style="color:red" ng-show="myForm.firstname.$touched && myForm.firstname.$invalid">
+         you must fill first name</p>
+         <p class="error validationerror" ng-show="myForm.lastname.$invalid && myForm.lastname.$touched">
+         <span style="color:red" ng-show="myForm.lastname.$touched && myForm.lastname.$invalid">you must fill last name</p>
+
+
+ 
+<br/>
+<br/>
+	 <b>E-mail</b>
+	  <input type="email" name="email" placeholder="your email" ng-model="email">
+	 <p class="error validationerror" ng-show="myForm.email.$invalid && myForm.email.$touched">
+	 <span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid">
+	 this must be a valid email</p>
+<br/>
+<br/>
+
+	<b class="demo1">Password</b>
+	  <input type="password" name="password" placeholder="password" ng-model="password" ng-required="true" ng-minlength="6">
+	 <p class="error validationerror" ng-show="myForm.password.$invalid && myForm.password.$touched">
+	 <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid">
+	 enter a valid password</p>
+<br/>
+<br/>
+	<b>Gender:</b>
+	  <input type="radio" name="gender" value="male">male
+      <input type="radio" name="gender" value="female">female
+<br/><br/>
+     <input type="button" name="submit"  value="Sign up" class="btn btn-primary" ng-disabled=
+     "myForm.email.$touched && myForm.email.$invalid ||
+	     myForm.password.$touched && myForm.password.$invalid || myForm.firstname.$touched && 
+	     myForm.firstname.$invalid || myForm.lastname.$touched && myForm.lastname.$invalid ">
+     </fieldset>
+      </div>
+      </div>
+    
+    </form>
+  </section>
+ </div>
+  
+     <script>
+      var app = angular.module('myApp', []);
+      app.controller('RegistrationController', function($scope) {
+      $scope.firstname2 = 'as';
+      $scope.email = '';
+       });
+     </script>
+  </body>
+    
+  </html>

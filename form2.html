@@ -1,0 +1,81 @@
+<!doctype>
+<html>
+<head>
+
+  <title>Login</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css"> 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+   <body class="bg-success">
+ 
+ <nav class="navbar navbar-inverse navbar-top">
+        <div class="container-fluid">
+        <div class="navbar-header">
+               <a class="navbar-brand" href="http://localhost/example/new%20folder/form2.html#"><span class=
+               "glyphicon glyphicon-home"></span>Home</a>
+               <a class="navbar-brand" href="http://localhost/example/new%20folder/register.html">Register</a>
+        </div>
+              <ul class="nav navbar-nav">
+              <li><a href="http://localhost/example/new%20folder/help.html#"><span class="glyphicon glyphicon-help">
+              </span>Help</a></li>
+              <li><a href="http://localhost/example/new%20folder/support.html">Contact Us</a></li>
+              </ul>
+              
+              
+        </div>
+    </nav>
+
+     <div class="container">
+      <section class="card register">
+       <form ng-app="myApp" ng-controller="validateCtrl"
+         name="myForm" novalidate>
+     <div class="form-group">
+
+      <center>
+       <h1>welcome to student registration form</h1>
+      </center>
+	 <div class="col-sm-6">
+	
+	 <h1>Login</h1>
+ 
+<br/>
+	 <p><h4 class="text-primary" >Email:</h4>
+      <input type="email" name="email" ng-model="email"   placeholder="enter email" class="help-block" required>
+        <span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid">
+        <span ng-show="myForm.email.$touched ">
+        Email is required.</span>
+        <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+  </span>
+  </p>
+
+
+     <p>
+   	 <h4 class="text-primary" >Password</h4><input type="password"  name="password" 
+	  placeholder= "enter your password"  required>
+<br><br>
+	 
+	</p>
+   
+	  <input type="button" class="btn btn-primary" name="login" value="Login" ng-disabled=
+	   "myForm.email.$dirty && myForm.email.$invalid ||
+	     myForm.password.$dirty && myForm.password.$invalid">
+     <script>
+      var app=angular.module('myApp',[]);
+      app.controller('validateCtrl',function($scope)
+      {
+    	$scope.email="";
+       });
+     </script>
+
+
+	<!--<input type="button" class="btn btn-primary" name="register" value="register">-->
+	 <a href="http://localhost/example/new%20folder/register.html">Register</a>
+    
+	 </div>
+    </div>
+   </form>
+  </body>
+ </html>
